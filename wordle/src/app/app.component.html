@@ -3,7 +3,7 @@
     <ng-container *ngFor ="let item of boxes">
       <div class="parentTile">
         <ng-container *ngFor="let innerItem of item">
-          <div class="childTile"></div>
+          <div class="childTile">{{innerItem.key}}</div>
         </ng-container>
       </div>
 
