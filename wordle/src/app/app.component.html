@@ -1,0 +1,27 @@
+<div class="mainContent">
+  <div class="tiles">
+    <ng-container *ngFor ="let item of boxes">
+      <div class="parentTile">
+        <ng-container *ngFor="let innerItem of item">
+          <div class="childTile"></div>
+        </ng-container>
+      </div>
+
+    </ng-container>
+  </div>
+  <div class="keyboard">
+    <ng-container *ngFor="let item of keyboad">
+      <ng-container *ngIf="(item.key !== 'ENTER') && (item.key !== 'BACKSPACE')">
+         <button (click)="handleChange(item.key)">{{item.key}}</button>
+      </ng-container>
+      <ng-container *ngIf="item.key === 'ENTER'">
+         <button style="width: 70px;" (click)="handleChange(item.key)">{{item.key}}</button>
+      </ng-container>
+      <ng-container *ngIf="item.key === 'BACKSPACE'">
+         <button style="width: 100px;" (click)="handleChange(item.key)">{{item.key}}</button>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
